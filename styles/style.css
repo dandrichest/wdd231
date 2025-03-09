@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg-color: #000080;
+    --main-text-color: #fff;
+    --main-bgg-color: #e26d5c;
+    --main-bggg-color: #98ff98;
+    --main-bgggg-color: #ff7d00;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--main-text-color);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6; /* Improved readability */
+}
+
+header {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 0 30px #333;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-height: 50px;
+    margin-right: 1rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header nav ul li a {
+    color: var(--main-text-color);
+    text-decoration: none;
+    transition: all 0.3s ease; /* Added smooth transition */
+}
+
+header nav ul li a:hover {
+    background-color: #eee;
+    color: #000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin: 0 10px;
+}
+
+.nav-menu a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.hamburger.active {
+    color: var(--main-bggg-color);
+    transform: rotate(90deg); /* Feedback for users */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+    .show li {
+        display: block;
+    }
+    
+    .hamburger.show::before {
+        content: "X";
+    }
+    
+}
+
+
+
+main {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section {
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Flexbox for two frames in the first section */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Spacing between frames */
+}
+
+.left-frame {
+    flex: 2; /* This frame will take up more space */
+    min-width: 40%;
+    max-width: 60%;
+    background-color: var(--main-text-color);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-frame {
+    flex: 1; /* This frame will take up less space */
+    min-width: 10%;
+    max-width: 50%;
+    background-color: var(--main-text-color);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Ensure images don't overflow their container */
+.right-frame img {
+    .right-frame img {
+        width: auto; /* Allow the image to maintain its natural width */
+        height: auto; /* Allow the image to maintain its natural height */
+        max-width: 100%; /* Prevent the image from overflowing its container */
+        display: block; /* Remove any inline spacing issues */
+        margin: auto; /* Center the image if needed */
+        border-radius: 5px; /* Keep the rounded corners */
+    }
+    
+}
+.left-frame ul {
+    margin-left: 10px;
+
+}
+
+h2 {
+    background-color: var(--main-bg-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--main-text-color);
+}
+
+/* Buttons */
+.course-button {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .course-button .button {
+    padding: 5px 30px;
+    background-color: var(--main-bgg-color);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .course-button .button:hover {
+    background-color: var(--main-bggg-color);
+  }
+  
+  /* Course Section */
+  #certificate-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  #certificate-section .completed {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: left;
+  }
+  
+  #certificate-section .not-completed {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: left;
+  }
+
+/* General Button Styles */
+#certificate-section button {
+    padding: 10px 100px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    transition: transform 0.2s;
+  }
+  
+  #certificate-section button:hover {
+    transform: scale(1.05); /* Enlarge on hover */
+  }
+  
+  /* Completed Course Button */
+  .completed-button {
+    background-color: #28a745; /* Green for completed courses */
+  }
+  
+  .completed-button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  /* Not Completed Course Button */
+  .not-completed-button {
+    background-color: #dc3545; /* Red for not completed courses */
+  }
+  
+  .not-completed-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+  
+  /* Course Details Section */
+  #course-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  #course-details h3 {
+    margin-bottom: 10px;
+  }
+    
+section:nth-child(even) {
+    background-color: gainsboro;
+}
+
+section:nth-child(odd) {
+    background-color: gainsboro;
+}
+
+figure {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+figcaption {
+    padding: 10px;
+    text-align: center;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin-top: px;
+}
+
+footer p {
+    margin: 5px 0;
+    transition: text-shadow 0.3s ease; /* Subtle feedback */
+}
+
+footer p:hover {
+    text-shadow: 0 0 5px var(--main-bggg-color);
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    figure {
+        width: 100%;
+    }
+    figcaption {
+        font-size: 14px;
+    }
+    .flex-container {
+        flex-direction: column; /* Stack the frames vertically */
+    }
+
+    .left-frame,
+    .right-frame {
+        min-width: 100%; /* Full width for small screens */
+        max-width: 100%;
+    }
+}
+
+
+
+/* Desktop View */
+@media (min-width: 769px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+   
+    figcaption {
+        font-size: 16px;
+    }
+    .nav-menu {
+        display: flex;
+        justify-content: space-around;
+    }
+    .nav-menu li {
+        display: inline;
+    }
+    .menu-icon {
+        display: none;
+    }
+    
+    
+}
+
