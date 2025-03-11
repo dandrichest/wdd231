@@ -9,13 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   updateFooter();
 
 // Store the selected elements that we are going to use. This is not required but a good practice with larger programs where the variable will be referenced more than once.
-const mainnav = document.querySelector('.navigation')
+const navigation = document.querySelector('.navigation')
 const hambutton = document.querySelector('#menu');
 
 // Add a click event listender to the hamburger button and use a callback function that toggles the list element's list of classes.
 hambutton.addEventListener('click', () => {
-	mainnav.classList.toggle('show');
-	hambutton.classList.toggle('show');
+	navigation.classList.toggle('open');
+	hambutton.classList.toggle('open');
 
 });
 
@@ -100,6 +100,34 @@ hambutton.addEventListener('click', () => {
       buttonContainer.appendChild(button);
     });
   }
+
+  // Function to Calculate Total Credits
+function calculateTotalCredits(courses) {
+  return courses.reduce((total, course) => total + course.credits, 0);
+}
+
+// Function to Display Course Buttons
+function displayCourseButtons(category) {
+  const buttonContainer = document.getElementById("certificate-section");
+  buttonContainer.innerHTML = ""; // Clear previous buttons
+
+  const filteredCourses = category === "all"
+    ? courses
+    : courses.filter(course => course.subject === category);
+
+  filteredCourses.forEach((course, index) => {
+    const button = document.createElement("button");
+    button.textContent = `${course.subject} ${course.number}`;
+    button.className = course.completed ? "completed-button" : "not-completed-button"; // Dynamic class based on completion status
+    button.addEventListener("click", () => displayCourseDetails(index));
+    buttonContainer.appendChild(button);
+  });
+
+  // Display Total Credits
+  const totalCredits = calculateTotalCredits(filteredCourses);
+  document.getElementById("total-credits").textContent = `Total Credits: ${totalCredits}`;
+}
+
 
   // Function to Display Course Details
   function displayCourseDetails(index) {

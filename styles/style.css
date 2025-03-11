@@ -61,6 +61,10 @@ header {
 	padding: 0.5rem 0.75rem;
 	background-color: var(--main-bg-color);
 	color: var(--main-text-color);
+  position: absolute;
+	top: 1rem;
+	right: 1rem;
+  border: 0;
 }
 
 #menu::before {
@@ -74,7 +78,7 @@ nav {
 .navigation {
 	list-style: none;
 	margin: 0 auto;
-	max-width: 760px;
+	max-width: 640px;
 }
 
 .navigation li {
@@ -92,18 +96,24 @@ nav {
 }
 
 .navigation a:hover,
-navigation a:active {
+.navigation a:active {
 	color: white;
 	background-color: black;
 }
 
-.show li {
+.active::before { 
+	content: "📍";  /* just a wayfinding symbol for the user */
+}
+
+.open li {
 	display: block;
 }
 
-#menu.show::before {
+#menu.open::before {
 	content: "X";
 }
+
+
 
 
 @media only screen and (min-width: 40em) {
@@ -201,8 +211,8 @@ h2 {
   
   .course-button .button {
     padding: 5px 30px;
-    background-color: var(--main-bgg-color);
-    color: var(--text-color-light);
+    background-color: black;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -248,8 +258,8 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    color: #fff;
+    font-size: 18px;
+    color: white;
     transition: transform 0.2s;
   }
   
@@ -259,7 +269,7 @@ h2 {
   
   /* Completed Course Button */
   .completed-button {
-    background-color: #28a745; /* Green for completed courses */
+    background-color: #1b5f3a; /* Green for completed courses */
   }
   
   .completed-button:hover {
@@ -268,7 +278,7 @@ h2 {
   
   /* Not Completed Course Button */
   .not-completed-button {
-    background-color: #dc3545; /* Red for not completed courses */
+    background-color: #81202a; /* Red for not completed courses */
   }
   
   .not-completed-button:hover {
@@ -330,7 +340,7 @@ footer {
 
 
 /* Mobile View */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     figure {
         width: 100%;
     }
@@ -361,17 +371,12 @@ footer {
     figcaption {
         font-size: 16px;
     }
-    .nav-menu {
-        display: flex;
-        justify-content: space-around;
-    }
-    .nav-menu li {
-        display: inline;
-    }
-    .menu-icon {
-        display: none;
-    }
-    
+
+    h1 {
+		font-size: 2.5rem;
+		margin-left: 0;
+		text-align: center;
+	}
     
 }
 
