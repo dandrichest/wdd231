@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg-color: #000080;
+    --main-text-color: #fff;
+    --main-bgg-color: #e26d5c;
+    --main-bggg-color: #98ff98;
+    --main-bgggg-color: #ff7d00;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--main-text-color);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Header styling */
+header {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+    padding: 20px;
+    box-shadow: 0 0 30px #333;
+    z-index: 1000;
+}
+
+
+/* Header left section */
+/* Parent container: Aligns image and text side by side */
+.header-left {
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Add spacing between the image and text */
+}
+
+/* Styles for the image */
+.logo {
+    max-height: 70px; /* Adjust logo size */
+}
+
+/* Text container: Stack the text vertically */
+.text {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    line-height: 1.2; /* Add spacing between lines */
+    padding: 5px;
+}
+
+.title {
+    font-weight: bold; /* Make "Abuja" stand out */
+    font-size: 2.5rem;
+    margin: 0; /* Remove unwanted margin */
+}
+
+.chamber {
+    font-size: 0.6rem;
+}
+
+.text p {
+    margin: 0; /* Ensure no extra spacing */
+}
+
+
+
+.hero {
+    background-image: url('../images/ecommerce.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    
+    padding: 6rem;
+ 
+    margin: 0px;
+}
+
+
+
+
+/* Mobile View ***************/
+#menu {
+	display: block;
+	font-size: 2rem;
+	font-weight: 700;
+	text-decoration: none;
+	padding: 0.5rem 0.75rem;
+	background-color: var(--main-bg-color);
+	color: var(--main-text-color);
+    position: absolute;
+	top: 1rem;
+	right: 1rem;
+    border: 0;
+}
+
+#menu::before {
+	content: "≡";
+}
+
+nav {
+	background-color: var(--main-bg-color);
+    width: 100%; /* Ensure the nav spans the full width */
+    
+}
+.navigation {
+	list-style: none;
+	margin: 0 auto;
+	max-width: 640px;
+}
+
+.navigation li {
+	display: none;
+}
+.navigation a {
+	display: block;
+	padding: 0.75rem;
+	text-align: left;
+	text-decoration: none;
+	color: var(--main-text-color);
+	font-weight: 700;
+	transition: 0.5s;
+	font-size: clamp(1rem, 2vmin, 1.5rem);
+}
+
+.navigation a:hover,
+.navigation a:active {
+	color: white;
+	background-color: black;
+}
+
+.active::before { 
+	content: "📍";  /* just a wayfinding symbol for the user */
+}
+
+.open li {
+	display: block;
+}
+
+#menu.open::before {
+	content: "X";
+}
+
+
+
+
+@media only screen and (min-width: 40em) {
+	.navigation {
+		display: flex;
+	}
+	.navigation li {
+		display: block; /* change state in small view */
+		flex: 1 1 100%;
+	}
+	.navigation a {
+		text-align: center;
+	}
+	#menu {
+		display: none;
+	}
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  /* Directory Section */
+  .company-directory {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .company-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--main-bggg-color);
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .company-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .company-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .company-card h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .company-card p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .company-card a {
+    color: var(--main-bg-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .company-card a:hover {
+    color: var(--main-bgggg-color);
+    text-decoration: underline;
+  }
+
+/* Footer Styles */
+footer {
+    background-color: var(--main-bg-color); /* Dark background for footer */
+    color: var(--main-text-color); /* White text for footer content */
+    padding: 20px;
+    
+}
+
+/* Default style: Columns */
+.footer-cham {
+    display: flex; /* Use Flexbox for a row layout */
+    justify-content: space-between; /* Space out columns */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Add space between columns */
+}
+
+.cham {
+    flex: 1; /* Ensure equal column width */
+    margin: 0 10px;
+}
+
+/* Responsive style: Stacks columns as rows for small screens */
+@media (max-width: 640px) { /* Adjust breakpoint as needed */
+    .footer-cham {
+        flex-direction: column; /* Change layout to a column (stacking) */
+        align-items: center; /* Center align items */
+        gap: 15px; /* Adjust spacing for stacked items */
+    }
+
+    .cham {
+        margin: 10px 0; /* Add vertical spacing between rows */
+        text-align: center; /* Center align text in small screens */
+    }
+}
+
+
+.cham h3 {
+    font-size: 18px; /* Font size for headers */
+    margin-bottom: 5px; /* Space below the header */
+}
+
+.cham p {
+    margin: 5px 0; /* Add spacing between paragraphs */
+}
+
+.social-media {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Display the social icons horizontally */
+    justify-content: center; /* Center-align the icons */
+    gap: 20px; /* Space between each icon */
+    padding: 0;
+    margin: 0;
+}
+
+.social-media li a {
+    color: white; /* White icons */
+    font-size: 30px; /* Icon size */
+    text-decoration: none; /* Remove underlines */
+}
+
+.social-media li a:hover {
+    color: var(--main-bggg-color); /* Change icon color when hovered */
+}
+
+
+
+/* Mobile View */
+@media (max-width: 640px) {
+
+}
+
+
+
+/* Desktop View */
+@media (min-width: 769px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+   
+    h1 {
+		font-size: 2.5rem;
+		margin-left: 0;
+		text-align: center;
+	}
+    
+}
+
