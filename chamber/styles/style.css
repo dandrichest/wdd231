@@ -84,6 +84,15 @@ header {
     margin: 0px;
 }
 
+/* Override for .fa-flip-horizontal */
+.fa-flip-horizontal {
+    transform: scaleX(-1); /* Flips horizontally */
+}
+
+/* Override for .fa-flip-vertical */
+.fa-flip-vertical {
+    transform: scaleY(-1); /* Flips vertically */
+}
 
 
 
