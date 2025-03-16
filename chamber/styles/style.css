@@ -19,7 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    line-height: 1.6; /* Improved readability */
+    line-height: 2.5rem; /* Improved readability */
 }
 
 /* Header styling */
@@ -53,7 +53,7 @@ header {
 .text {
     display: flex; /* Flexbox layout */
     flex-direction: column; /* Stack elements vertically */
-    line-height: 1.2; /* Add spacing between lines */
+    line-height: 1.8rem; /* Add spacing between lines */
     padding: 5px;
 }
 
@@ -255,7 +255,7 @@ footer {
     }
 
     .cham {
-        margin: 10px 0; /* Add vertical spacing between rows */
+        margin: 10px 0px; /* Add vertical spacing between rows */
         text-align: center; /* Center align text in small screens */
     }
 }
