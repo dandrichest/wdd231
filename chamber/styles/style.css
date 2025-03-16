@@ -84,13 +84,7 @@ header {
     margin: 0px;
 }
 
-.fa-flip-horizontal {
-    transform: scaleX(-1); /* Correct horizontal flip */
-}
 
-.fa-flip-vertical {
-    transform: scaleY(-1); /* Correct vertical flip */
-}
 
 
 /* Mobile View ***************/
