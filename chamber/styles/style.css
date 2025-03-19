@@ -98,7 +98,7 @@ header {
 
 .hero-2 h1 {
 margin: 0;
-font-size: 3rem;
+font-size: 2rem;
 color: var(--main-text-color)
 }
 
@@ -121,6 +121,7 @@ cursor: pointer;
 .hero-2 button a{
 color: var(--main-text-color);
 text-decoration: none;
+font-weight: bold;
 }
 
 .hero-2 button:hover {
