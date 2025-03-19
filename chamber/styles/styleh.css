@@ -71,60 +71,55 @@ header {
     margin: 0; /* Ensure no extra spacing */
 }
 
-/* Hero for Directory */
-.hero {
-    background-image: url('../images/ecommerce.jpg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    
-    padding: 6rem;
- 
-    margin: 0px;
+  /* Hero */
+  main {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-/* Hero for Home */
 .hero-2 {
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Gradient overlay */
-    url('../images/abuja-chamber.webp'); /* Your hero image */
-  background-size: cover; /* Cover the entire container */
-  background-position: center; /* Center the image */
-  text-align: center;
-  color: white; /* Make text stand out on the darker background */
-  padding: 6rem;
-}
-
+        background-image: 
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Gradient overlay */
+          url('../images/abuja-chamber.webp'); /* Your hero image */
+        background-size: cover; /* Cover the entire container */
+        background-position: center; /* Center the image */
+        text-align: center;
+        color: white; /* Make text stand out on the darker background */
+        padding: 6rem;
+      }
+      
 
 .hero-2 h1 {
-margin: 0;
-font-size: 3rem;
-color: var(--main-text-color)
+    margin: 0;
+    font-size: 3rem;
+    color: var(--main-text-color)
 }
 
 .hero-2 p {
-margin: 1rem 0;
-font-size: 2rem;
-color: var(--main-bgggg-color)
-
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: var(--main-bgggg-color)
+    
 }
 
 .hero-2 button {
-background-color: var(--main-bg-color);
-color: var(--main-text-color);
-padding: 1rem 2rem;
-border: none;
-border-radius: 5px;
-cursor: pointer;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .hero-2 button a{
-color: var(--main-text-color);
-text-decoration: none;
+    color: var(--main-text-color);
+    text-decoration: none;
 }
 
 .hero-2 button:hover {
-background-color: var(--main-bggg-color);
+    background-color: var(--main-bggg-color);
 }
 
 
@@ -190,9 +185,6 @@ nav {
 	content: "X";
 }
 
-
-
-
 @media only screen and (min-width: 40em) {
 	.navigation {
 		display: flex;
@@ -217,15 +209,15 @@ main {
     padding: 20px;
   }
   
-  /* Directory Section */
-  .company-directory {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+  /* Directory Section for Home */
+  .home-company-cards {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 20px; /* Add space between the cards */
     padding: 20px;
   }
   
-  .company-card {
+  .home-company-card {
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: var(--main-bggg-color);
@@ -234,239 +226,37 @@ main {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   
-  .company-card:hover {
+  .home-company-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
   
-  .company-card img {
+  .home-company-card img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 15px;
   }
   
-  .company-card h2 {
+  .home-company-card h2 {
     font-size: 1.5rem;
     margin: 10px 0;
   }
   
-  .company-card p {
+  .home-company-card p {
     margin: 5px 0;
     font-size: 1rem;
   }
   
-  .company-card a {
+  .home-company-card a {
     color: var(--main-bg-color);
     text-decoration: none;
     font-weight: bold;
   }
   
-  .company-card a:hover {
+  .home-company-card a:hover {
     color: var(--main-bgggg-color);
     text-decoration: underline;
-  }
-
-  /* List View Styling */
-.company-list {
-  display: block;
-  padding: 20px;
-}
-
-.list-item {
-  display: flex;
-  align-items: center; /* Center items vertically */
-  justify-content: space-between; /* Spread items across the row */
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.list-item:nth-child(odd) {
-  background-color: #f9f9f9; /* Light stripe */
-}
-
-.list-item:nth-child(even) {
-  background-color: #fff; /* White stripe */
-}
-
-.list-item img {
-  max-height: 40px; /* Smaller logo for list view */
-  margin-right: 15px; /* Add spacing next to logo */
-}
-
-.list-item h2 {
-  margin: 0;
-  font-size: 1rem;
-  flex: 2; /* Take up more space for the name */
-}
-
-.list-item p {
-  margin: 0;
-  font-size: 0.9rem;
-  flex: 3; /* Take up space for other details */
-}
-
-.list-item a {
-  color: var(--main-bg-color);
-  text-decoration: none;
-  font-weight: bold;
-  flex: 1; /* Shrink link to take less space */
-}
-
-.list-item a:hover {
-  color: var(--main-bgggg-color);
-  text-decoration: underline;
-}
-
-#view-toggle button {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px; /* Space between icon and text */
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#view-toggle button:hover {
-  background-color: var(--main-bgg-color);
-  transform: translateY(-2px);
-}
-
-#view-toggle button:active {
-  transform: translateY(2px);
-}
-
-/* Directory Section for Home */
-.home-company-cards {
-  display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.home-company-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: var(--main-bggg-color);
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.home-company-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.home-company-card img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.home-company-card h2 {
-  font-size: 1.5rem;
-  margin: 10px 0;
-}
-
-.home-company-card p {
-  margin: 5px 0;
-  font-size: 1rem;
-}
-
-.home-company-card a {
-  color: var(--main-bg-color);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.home-company-card a:hover {
-  color: var(--main-bgggg-color);
-  text-decoration: underline;
-}  
-
-/* Weather Section Styles */
-/* Overall Weather Section */
-#weather-section {
-  
-  max-width: 100%;
-  margin: auto;
-  text-align: center;
-  padding: 20px;
-  background: #f2f2f2;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-#weather-section h2 {
-  margin-bottom: 20px;
-  color: #1a5276;
-}
-
-/* Grid Layout for Columns */
-#weather-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equally-sized columns */
-  gap: 15px;
-}
-
-/* Individual Column Styling */
-.weather-column {
-  background: var(--main-text-color);
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  
-}
-
-.weather-column h3 {
-  background-color: var(--main-bgg-color);
-  margin-bottom: 10px;
-  color: var(--main-text-color);
-  font-size: 1.2em;
-}
-
-.weather-column p, 
-.weather-column ul {
-  font-size: 1em;
-  color: #555;
-}
-
-/* Specific Styling for Forecast List */
-#forecast-list {
-  list-style: none;
-  padding: 0;
-}
-#forecast-list li {
-  margin: 8px 0;
-}
-
-#forecast-list .day {
-  color: #333;
-  font-weight: bold;
-}
-
-#forecast-list strong {
-  color: #117a65;
-  font-size: 1.2em;
-}
-/* Responsive Design for Smaller Screens */
-@media (max-width: 640px) {
-  #weather-grid {
-    grid-template-columns: 1fr; /* Stack columns vertically */
-  }
-}
-
-/* Styling for Current Weather Icon */
-#weather-icon {
-  display: block;
-  margin: 10px auto;
-}
+  }  
 
 /* Footer Styles */
 footer {

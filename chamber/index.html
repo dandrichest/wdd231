@@ -46,38 +46,58 @@
       <button type="button" id="menu"></button>
       <nav>
         <ul class="navigation">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="directory.html" title="Directory">Directory</a></li>
           <li>
-            <a href="directory.html" title="directory" class="active"
-              >Directory</a
-            >
+            <a href="#" title="Join">Join</a>
           </li>
           <li>
-            <a href="#">Join</a>
-          </li>
-          <li>
-            <a href="#">Discover</a>
+            <a href="#" title="Discover">Discover</a>
           </li>
         </ul>
       </nav>
     </header>
-
     <main>
-      <div class="hero"></div>
+      <section class="hero-2">
+        <h1>Welcome to Abuja Chamber of Commerce</h1>
+        <p>Connecting Businesses</p>
+        <button><a href="join.html">Join Us</a></button>
+      </section>
 
-      <h1>Directory</h1>
+      <h1>Home</h1>
+      <section>
+        <div id="weather-section">
+          <h2></h2>
+          <div id="weather-grid">
+            <!-- Events Column -->
+            <div class="weather-column" id="events-column">
+              <h3>Events</h3>
+              <p id="events-info">No events to display.</p>
+            </div>
+            <!-- Current Weather Column -->
+            <div class="weather-column" id="current-weather-column">
+              <h3>Current Weather</h3>
+              <img id="weather-icon" />
+              <p id="current-temp"></p>
+              <p id="current-condition"></p>
+              <p id="current-details"></p>
+            </div>
+            <!-- Weather Forecast Column -->
+            <div class="weather-column" id="forecast-column">
+              <h3>Weather Forecast</h3>
+              <ul id="forecast-list">
+                <li>Today: --°C</li>
+                <li>Tomorrow: --°C</li>
+                <li>Day After Tomorrow: --°C</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div id="view-toggle" style="text-align: center; margin: 20px 0">
-        <button onclick="showCardView()">
-          <i class="fas fa-th-large"></i> Card View
-        </button>
-        <button onclick="showListView()">
-          <i class="fas fa-bars"></i> List View
-        </button>
-      </div>
-
-      <div id="company-directory" class="company-directory"></div>
-      <div id="company-list" class="company-list" style="display: none"></div>
+      <section>
+        <div id="home-company-cards" class="home-company-cards"></div>
+      </section>
     </main>
     <footer>
       <div class="footer-cham">
