@@ -200,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHomePageCompanies();
 });
 // Weather 
-// Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
 const apiKey = 'f90935b0f1119ccbdabfb84ede33aaf6';
 const city = 'Abuja';
 
@@ -217,7 +216,8 @@ async function fetchCurrentWeather() {
     // Update current weather details
     document.getElementById('current-temp').textContent = `Temperature: ${data.main.temp}°C`;
     document.getElementById('current-condition').textContent = `Condition: ${data.weather[0].description}`;
-    document.getElementById('current-details').textContent = `Humidity: ${data.main.humidity}%, Wind Speed: ${data.wind.speed} m/s`;
+    document.getElementById('current-details').textContent = `Humidity: ${data.main.humidity}%,`;
+    document.getElementById('current-details-2').textContent = `Wind Speed: ${data.wind.speed} m/s`;
 
     // Add weather icon
     const weatherIcon = document.getElementById('weather-icon');
@@ -228,6 +228,7 @@ async function fetchCurrentWeather() {
     document.getElementById('current-temp').textContent = 'Unable to fetch weather data.';
     document.getElementById('current-condition').textContent = '';
     document.getElementById('current-details').textContent = '';
+    document.getElementById('current-details-2').textContent = '';
     document.getElementById('weather-icon').src = '';
   }
 }
@@ -257,23 +258,7 @@ async function fetchForecast() {
   }
 }
 
-// Fetch and display weather events (if any)
-async function fetchWeatherEvents() {
-  try {
-    const response = await fetch(currentWeatherUrl);
-    const data = await response.json();
 
-    const eventsInfo = document.getElementById('events-info');
-    if (data.alerts && data.alerts.length > 0) {
-      eventsInfo.textContent = data.alerts.map(alert => alert.description).join(', ');
-    } else {
-      eventsInfo.textContent = 'No significant weather events at the moment.';
-    }
-  } catch (error) {
-    console.error('Error fetching weather events:', error);
-    document.getElementById('events-info').textContent = 'Unable to fetch weather events.';
-  }
-}
 
 // Fetch all data
 fetchCurrentWeather();
