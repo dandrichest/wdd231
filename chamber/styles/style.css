@@ -6,7 +6,7 @@
 
 :root {
     --main-bg-color: #000080;
-    --main-text-color: #fff;
+    --main-text-color: #fffafa;
     --main-bgg-color: #e26d5c;
     --main-bggg-color: #98ff98;
     --main-bgggg-color: #ff7d00;
@@ -86,12 +86,12 @@ header {
 /* Hero for Home */
 .hero-2 {
   background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Gradient overlay */
+    linear-gradient(rgb(22, 14, 14), rgba(0, 0, 0, 0.5)), /* Gradient overlay */
     url('../images/abuja-chamber.webp'); /* Your hero image */
   background-size: cover; /* Cover the entire container */
   background-position: center; /* Center the image */
   text-align: center;
-  color: white; /* Make text stand out on the darker background */
+  color: #fdf7f2; /* Make text stand out on the darker background */
   padding: 6rem;
 }
 
@@ -105,7 +105,7 @@ color: var(--main-text-color)
 .hero-2 p {
 margin: 1rem 0;
 font-size: 2rem;
-color: var(--main-bgggg-color)
+color: #fdf7f2;
 
 }
 
@@ -428,7 +428,7 @@ main {
 }
 
 .weather-column h3 {
-  background-color: var(--main-bgg-color);
+  background-color: #9e1500;
   margin-bottom: 10px;
   color: var(--main-text-color);
   font-size: 1.2em;
