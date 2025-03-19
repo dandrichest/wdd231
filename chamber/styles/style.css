@@ -112,7 +112,7 @@ color: #fdf7f2;
 .hero-2 .button {
 background-color: var(--main-bg-color);
 color: var(--main-text-color);
-padding: 1rem 2rem;
+padding: 20px 48px;
 border: none;
 border-radius: 5px;
 cursor: pointer;
