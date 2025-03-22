@@ -112,7 +112,7 @@ color: #fdf7f2;
 .hero-2 .button {
 background-color: var(--main-bg-color);
 color: var(--main-text-color);
-padding: 20px 48px;
+padding: 10px 20px;
 border: none;
 border-radius: 5px;
 cursor: pointer;
@@ -136,13 +136,14 @@ background-color: var(--main-bggg-color);
 	font-size: 2rem;
 	font-weight: 700;
 	text-decoration: none;
-	padding: 0.5rem 0.75rem;
+	padding: 0px;
 	background-color: var(--main-bg-color);
 	color: var(--main-text-color);
     position: absolute;
 	top: 1rem;
 	right: 1rem;
     border: 0;
+  margin: 0;
 }
 
 #menu::before {
@@ -186,6 +187,7 @@ nav {
 
 .open li {
 	display: block;
+  padding: 5px 10px;
 }
 
 #menu.open::before {
