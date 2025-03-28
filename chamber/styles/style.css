@@ -129,6 +129,18 @@ font-weight: bold;
 background-color: var(--main-bggg-color);
 }
 
+/* Hero for Join */
+.hero-3 {
+    background-image: url('../images/accci.webp');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    
+    padding: 6rem;
+ 
+    margin: 0px;
+}
+
 
 /* Mobile View ***************/
 #menu {

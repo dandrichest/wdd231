@@ -328,12 +328,17 @@ document.getElementById("timestamp").value = new Date().toISOString();
 
 // Animate Membership Cards on Page Load
 const cards = document.querySelectorAll(".card");
+
+// Loop through each card and apply staggered animation
 cards.forEach((card, index) => {
+  // Set initial styles for animation
   card.style.opacity = "0";
-  card.style.transform = "translateX(-50px)";
+  card.style.transform = "translateY(30px)";
+
+  // Use a timeout to stagger the animations
   setTimeout(() => {
-    card.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-    card.style.opacity = "1";
-    card.style.transform = "translateX(0)";
-  }, index * 300); // Stagger each card by 300ms
+    card.style.transition = "opacity 0.8s ease, transform 0.8s ease"; // Smooth animation
+    card.style.opacity = "1"; // Make the card visible
+    card.style.transform = "translateY(0)"; // Reset transform
+  }, index * 300); // Add a delay for staggered effect
 });
