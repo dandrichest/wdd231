@@ -23,7 +23,7 @@
       property="og:url"
       content="https://dandrichest.github.io/wdd231/chamber/directory.html"
     />
-    <meta property="og:type" content="website"/>
+    <meta property="og:type" content="website" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       rel="stylesheet"
@@ -43,63 +43,42 @@
         </div>
       </div>
 
-      <button type="button" id="menu" aria-label="menu"></button>
+      <button type="button" id="menu"></button>
       <nav>
         <ul class="navigation">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="directory.html" title="Directory">Directory</a></li>
+          <li><a href="index.html">Home</a></li>
           <li>
-            <a href="join.html" title="Join">Join</a>
+            <a href="directory.html" title="directory" class="active"
+              >Directory</a
+            >
           </li>
           <li>
-            <a href="#" title="Discover">Discover</a>
+            <a href="join.html">Join</a>
+          </li>
+          <li>
+            <a href="#">Discover</a>
           </li>
         </ul>
       </nav>
     </header>
+
     <main>
-      <section class="hero-2">
-        <h1>Welcome to Abuja Chamber of Commerce</h1>
-        <p>Connecting Businesses</p>
-        <a href="join.html" class="button">Join Us</a>
+      <div class="hero"></div>
 
-      </section>
-
-      <h1>Home</h1>
-
-        <div id="weather-section">
-         
-          <div id="weather-grid">
-            <!-- Events Column -->
-            <div class="weather-column" id="events-column">
-              <h3>Events</h3>
-              <p id="events">No events to display.</p>
-            </div>
-            <!-- Current Weather Column -->
-            <div class="weather-column" id="current-weather-column">
-              <h3>Current Weather</h3>
-              <img src="images/weather.icon" id="weather-icon" alt="weather-icon" />
-              <p id="current-temp"></p>
-              <p id="current-condition"></p>
-              <p id="current-details"></p>
-               <p id="current-details-2"></p>
-            </div>
-            <!-- Weather Forecast Column -->
-            <div class="weather-column" id="forecast-column">
-              <h3>Weather Forecast</h3>
-              <ul id="forecast-list">
-                <li>Today: --°C</li>
-                <li>Tomorrow: --°C</li>
-                <li>Day After Tomorrow: --°C</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <h1>Thank You for Applying!</h1>
+<section>
+      <h2>Your Application Details</h2>
+      <p><strong>First Name:</strong> <span id="displayFirstName"></span></p>
+      <p><strong>Last Name:</strong> <span id="displayLastName"></span></p>
+      <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+      <p><strong>Mobile Number:</strong> <span id="displayMobile"></span></p>
+      <p><strong>Organization Title:</strong> <span id="displayOrganizationTitle"></span></p>
+      <p><strong>Organization Name:</strong> <span id="displayOrganizationName"></span></p>
+      <p><strong>Membership Level:</strong> <span id="displayMembershipLevel"></span></p>
+      <p><strong>Organization Description:</strong> <span id="displayOrganizationDescription"></span></p>
+      <p><strong>Submission Time:</strong> <span id="displayTimestamp"></span></p>
+    </section>
      
-
-      <section>
-        <div id="home-company-cards" class="home-company-cards"></div>
-      </section>
     </main>
     <footer>
       <div class="footer-cham">

@@ -477,6 +477,155 @@ main {
   display: block;
   margin: 10px auto;
 }
+/* Join us */
+/* Layout for Form and Cards */
+.form-and-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+#form-section {
+  flex: 1 1 50%; /* Take up half the width on larger screens */
+  max-width: 50%; /* Constrain the width */
+}
+
+#membership-cards {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Styling */
+form {
+  background: white;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+}
+
+form input, form select, form textarea, form button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Card Styling */
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--main-bg-color);
+}
+
+.card a {
+  color: #8e2e1f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  background-color: var(--main-bggg-color);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .form-and-cards {
+    flex-direction: column; /* Stack form and cards vertically */
+  }
+
+  #form-section {
+    flex: 1 1 auto; /* Allow the form to take more space */
+    max-width: 90%; /* Make the form wider */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+
+  #membership-cards {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%; /* Cards should take up full width */
+    margin-bottom: 1rem;
+  }
+}
+
+/* Modals (Dialog Styling) */
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+dialog h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+dialog p {
+  margin-top: 1rem;
+}
+
+dialog button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+dialog button:hover {
+  background-color: #0056b3;
+}
 
 /* Footer Styles */
 footer {

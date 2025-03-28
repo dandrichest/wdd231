@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abuja Chamber of Commerce - Daniel Oyeniyi</title>
+    <meta
+      name="description"
+      content="WDD 231 - Dynamic Web Fundamentals - Daniel Oyeniyi"
+    />
+    <meta name="author" content="Daniel Oyeniyi" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:title" content="Abuja Chamber of Commerce - Daniel Oyeniyi" />
+
+    <meta property="og:image" content="images/chamber.png" />
+    <meta
+      property="og:url"
+      content="https://dandrichest.github.io/wdd231/chamber/directory.html"
+    />
+    <meta property="og:type" content="website" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/style.css" />
+    <script defer src="scripts/script.js"></script>
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="images/chamber.png" alt="Chamber image" class="logo" />
+        <div class="text">
+          <p class="title">Abuja</p>
+          <p class="chamber">Chamber of Commerce</p>
+        </div>
+      </div>
+
+      <button type="button" id="menu" aria-label="menu"></button>
+      <nav>
+        <ul class="navigation">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="directory.html">Directory</a
+            >
+          </li>
+          <li>
+            <a href="join.html" title="join" class="active">Join</a>
+          </li>
+          <li>
+            <a href="#">Discover</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero"></div>
+
+      <h1>Join us</h1>
+        <div class="form-and-cards">
+      <!-- Form Section -->
+      <section id="form-section">
+        <h2>Apply for Membership</h2>
+        <form method="get" action="thankyou.html">
+          <label for="firstName" title="Applicant's First Name">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required autocomplete="given-name" title="Enter your first name">
+          
+          <label for="lastName" title="Applicant's Last Name">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required autocomplete="family-name" title="Enter your last name">
+          
+          <label for="orgTitle" title="Organizational Title">Organizational Title:</label>
+          <input type="text" id="orgTitle" name="orgTitle" autocomplete="organization-title" title="Enter your organizational title" pattern="^[a-zA-Z- ]{7,}$" required>
+          
+          <label for="email" title="Email Address">Email:</label>
+          <input type="email" id="email" name="email" required autocomplete="email" title="Enter your email address" placeholder="e.g. example@domain.com">
+          
+          <label for="mobile" title="Mobile Phone Number">Mobile Phone Number:</label>
+          <input type="tel" id="mobile" name="mobile" required autocomplete="tel" title="Enter your mobile phone number" placeholder="+234-800-000-0000">
+          
+          <label for="organization" title="Business/Organization Name">Organization Name:</label>
+          <input type="text" id="organization" name="organization" required autocomplete="organization" title="Enter your organization's name">
+          
+          <label for="membershipLevel" title="Membership Level">Membership Level:</label>
+          <select id="membershipLevel" name="membershipLevel" title="Select a membership level">
+            <option value="NP">NP Membership (No Fee)</option>
+            <option value="Bronze">Bronze Membership</option>
+            <option value="Silver">Silver Membership</option>
+            <option value="Gold">Gold Membership</option>
+          </select>
+
+          <label for="orgDescription" title="Organization Description">Organization Description:</label>
+          <textarea id="orgDescription" name="orgDescription" title="Provide a description of your organization"></textarea>
+          
+          <input type="hidden" id="timestamp" name="timestamp" value="">
+          <input type="submit" value="Submit Application">
+        </form>
+      </section>
+
+      <!-- Membership Cards Section -->
+      <section id="membership-cards">
+        <h2>Membership Level</h2>
+        <div class="card" id="npCard">
+          <h3>NP Membership</h3>
+          <a href="#npModal">Learn More</a>
+        </div>
+        <div class="card" id="bronzeCard">
+          <h3>Bronze Membership</h3>
+          <a href="#bronzeModal">Learn More</a>
+        </div>
+        <div class="card" id="silverCard">
+          <h3>Silver Membership</h3>
+          <a href="#silverModal">Learn More</a>
+        </div>
+        <div class="card" id="goldCard">
+          <h3>Gold Membership</h3>
+          <a href="#goldModal">Learn More</a>
+        </div>
+        <!-- Modals -->
+    <dialog id="npModal">
+      <h3>NP Membership</h3>
+      <p>Benefits: Free for non-profit organizations. Access to basic events.</p>
+      <button onclick="document.getElementById('npModal').close()">Close</button>
+    </dialog>
+    <dialog id="bronzeModal">
+      <h3>Bronze Membership</h3>
+      <p>Benefits: Includes access to premium events and basic advertising.</p>
+      <button onclick="document.getElementById('bronzeModal').close()">Close</button>
+    </dialog>
+    <dialog id="silverModal">
+      <h3>Silver Membership</h3>
+      <p>Benefits: Includes training and access to spotlight positions on the homepage.</p>
+      <button onclick="document.getElementById('silverModal').close()">Close</button>
+    </dialog>
+    <dialog id="goldModal">
+      <h3>Gold Membership</h3>
+      <p>Benefits: Full event discounts, exclusive advertising opportunities, and VIP events.</p>
+      <button onclick="document.getElementById('goldModal').close()">Close</button>
+    </dialog>
+      </section>
+    </div>
+    </main>
+    <footer>
+      <div class="footer-cham">
+        <div class="cham">
+          <h3>Abuja Chamber of Commerce</h3>
+          <p>Umaru Yar'Adua Way</p>
+          <p>Abuja, Nigeria.</p>
+          <p>info@abujacc.org</p>
+          <p>+2348035917764</p>
+        </div>
+        <div class="cham">
+          <ul class="social-media">
+            <li>
+              <a href="https://facebook.com" target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://twitter.com" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://linkedin.com" target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="cham">
+          <p>WDD231 Class Project</p>
+          <p>Daniel Oyeniyi</p>
+          <p id="current-year">&copy; 2025 ✿ Abuja Chamber of Commerce</p>
+          <p id="lastModified"></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -291,4 +291,49 @@ fetchCurrentWeather();
 fetchForecast();
 fetchWeatherEvents();
 
+// Add click event listeners for all anchor tags that reference dialogs
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    const modalId = link.getAttribute("href").replace("#", ""); // Extract modal ID
+    const dialog = document.getElementById(modalId); // Find the corresponding dialog element
+    if (dialog) dialog.showModal(); // Open the dialog
+  });
+});
 
+// Add close functionality for all dialogs
+document.querySelectorAll("dialog").forEach((dialog) => {
+  dialog.querySelector("button").addEventListener("click", () => dialog.close());
+});
+
+
+
+
+// Extract form data from the URL query string
+const urlParams = new URLSearchParams(window.location.search);
+
+// Dynamically display user inputs
+document.getElementById("displayFirstName").textContent = urlParams.get("firstName") || "N/A";
+document.getElementById("displayLastName").textContent = urlParams.get("lastName") || "N/A";
+document.getElementById("displayEmail").textContent = urlParams.get("email") || "N/A";
+document.getElementById("displayMobile").textContent = urlParams.get("mobile") || "N/A";
+document.getElementById("displayOrganizationTitle").textContent = urlParams.get("orgTitle") || "N/A";
+document.getElementById("displayOrganizationName").textContent = urlParams.get("organization") || "N/A";
+document.getElementById("displayMembershipLevel").textContent = urlParams.get("membershipLevel") || "N/A";
+document.getElementById("displayOrganizationDescription").textContent = urlParams.get("orgDescription") || "N/A";
+document.getElementById("displayTimestamp").textContent = urlParams.get("timestamp") || "N/A";
+
+    // Set the timestamp field with the current date and time
+document.getElementById("timestamp").value = new Date().toISOString();
+
+// Animate Membership Cards on Page Load
+const cards = document.querySelectorAll(".card");
+cards.forEach((card, index) => {
+  card.style.opacity = "0";
+  card.style.transform = "translateX(-50px)";
+  setTimeout(() => {
+    card.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+    card.style.opacity = "1";
+    card.style.transform = "translateX(0)";
+  }, index * 300); // Stagger each card by 300ms
+});
