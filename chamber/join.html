@@ -30,7 +30,7 @@
     />
 
     <link rel="stylesheet" href="styles/style.css" />
-    <script defer src="scripts/script.js"></script>
+    <script defer src="scripts/script1.js"></script>
     <link rel="icon" href="favicon.ico" />
   </head>
   <body>
@@ -70,82 +70,82 @@
       <section id="form-section">
         <h2>Apply for Membership</h2>
         <form method="get" action="thankyou.html">
-          <label for="firstName" title="Applicant's First Name">First Name:</label>
-          <input type="text" id="firstName" name="firstName" required autocomplete="given-name" title="Enter your first name">
-          
-          <label for="lastName" title="Applicant's Last Name">Last Name:</label>
-          <input type="text" id="lastName" name="lastName" required autocomplete="family-name" title="Enter your last name">
-          
-          <label for="orgTitle" title="Organizational Title">Organizational Title:</label>
-          <input type="text" id="orgTitle" name="orgTitle" autocomplete="organization-title" title="Enter your organizational title" pattern="^[a-zA-Z- ]{7,}$" required>
-          
-          <label for="email" title="Email Address">Email:</label>
-          <input type="email" id="email" name="email" required autocomplete="email" title="Enter your email address" placeholder="e.g. example@domain.com">
-          
-          <label for="mobile" title="Mobile Phone Number">Mobile Phone Number:</label>
-          <input type="tel" id="mobile" name="mobile" required autocomplete="tel" title="Enter your mobile phone number" placeholder="+234-800-000-0000">
-          
-          <label for="organization" title="Business/Organization Name">Organization Name:</label>
-          <input type="text" id="organization" name="organization" required autocomplete="organization" title="Enter your organization's name">
-          
-          <label for="membershipLevel" title="Membership Level">Membership Level:</label>
-          <select id="membershipLevel" name="membershipLevel" title="Select a membership level">
-            <option value="NP">NP Membership (No Fee)</option>
-            <option value="Bronze">Bronze Membership</option>
-            <option value="Silver">Silver Membership</option>
-            <option value="Gold">Gold Membership</option>
-          </select>
+  <label for="firstName" title="Applicant's First Name">First Name:</label>
+  <input type="text" id="firstName" name="firstName" required>
+  
+  <label for="lastName" title="Applicant's Last Name">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" required>
+  
+  <label for="email" title="Email Address">Email:</label>
+  <input type="email" id="email" name="email" required>
+  
+  <label for="mobile" title="Mobile Phone Number">Mobile Number:</label>
+  <input type="tel" id="mobile" name="mobile" required>
 
-          <label for="orgDescription" title="Organization Description">Organization Description:</label>
-          <textarea id="orgDescription" name="orgDescription" title="Provide a description of your organization"></textarea>
-          
-          <input type="hidden" id="timestamp" name="timestamp" value="">
-          <input type="submit" value="Submit Application">
-        </form>
-      </section>
+  <label for="orgTitle" title="Organizational Title">Organizational Title:</label>
+  <input type="text" id="orgTitle" name="orgTitle" required>
+  
+  <label for="organization" title="Business/Organization Name">Organization Name:</label>
+  <input type="text" id="organization" name="organization" required>
+  
+  <label for="membershipLevel" title="Membership Level">Membership Level:</label>
+  <select id="membershipLevel" name="membershipLevel" required>
+    <option value="NP">NP Membership (No Fee)</option>
+    <option value="Bronze">Bronze Membership</option>
+    <option value="Silver">Silver Membership</option>
+    <option value="Gold">Gold Membership</option>
+  </select>
 
+  <label for="orgDescription" title="Organization Description">Organization Description:</label>
+  <textarea id="orgDescription" name="orgDescription" required></textarea>
+  
+  <!-- Hidden timestamp field -->
+  <input type="hidden" id="timestamp" name="timestamp" value="">
+  
+  <input type="submit" value="Submit">
+</form>
+</section>
       <!-- Membership Cards Section -->
-      <section id="membership-cards">
+<section id="membership-cards">
         <h2>Membership Level</h2>
         <div class="card" id="npCard">
           <h3>NP Membership</h3>
-          <a href="#npmodal">Learn More</a>
+          <a href="#npModal">Learn More</a>
         </div>
-        <div class="card" id="bronzeCard">
-          <h3>Bronze Membership</h3>
-          <a href="#bronzemodal">Learn More</a>
-        </div>
-        <div class="card" id="silverCard">
-          <h3>Silver Membership</h3>
-          <a href="#silvermodal">Learn More</a>
-        </div>
-        <div class="card" id="goldCard">
-          <h3>Gold Membership</h3>
-          <a href="#goldmodal">Learn More</a>
-        </div>
-        <!-- Modals -->
-    <dialog id="npModal">
+        <dialog id="npModal">
       <h3>NP Membership</h3>
       <p>Benefits: Free for non-profit organizations. Access to basic events.</p>
-      <button onclick="document.getElementById('npModal').close()">Close</button>
+      <button>Close</button>
     </dialog>
-    <dialog id="bronzeModal">
+        <div class="card" id="bronzeCard">
+          <h3>Bronze Membership</h3>
+          <a href="#bronzeModal">Learn More</a>
+        </div>
+        <dialog id="bronzeModal">
       <h3>Bronze Membership</h3>
       <p>Benefits: Includes access to premium events and basic advertising.</p>
-      <button onclick="document.getElementById('bronzeModal').close()">Close</button>
+      <button>Close</button>
     </dialog>
-    <dialog id="silverModal">
+        <div class="card" id="silverCard">
+          <h3>Silver Membership</h3>
+          <a href="#silverModal">Learn More</a>
+        </div>
+        <dialog id="silverModal">
       <h3>Silver Membership</h3>
       <p>Benefits: Includes training and access to spotlight positions on the homepage.</p>
-      <button onclick="document.getElementById('silverModal').close()">Close</button>
+      <button>Close</button>
     </dialog>
-    <dialog id="goldModal">
+        <div class="card" id="goldCard">
+          <h3>Gold Membership</h3>
+          <a href="#goldModal">Learn More</a>
+        </div>
+        <dialog id="goldModal">
       <h3>Gold Membership</h3>
       <p>Benefits: Full event discounts, exclusive advertising opportunities, and VIP events.</p>
-      <button onclick="document.getElementById('goldModal').close()">Close</button>
+      <button>Close</button>
     </dialog>
-      </section>
-    </div>
+
+  </section>
     </main>
     <footer>
       <div class="footer-cham">
