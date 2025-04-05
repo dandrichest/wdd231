@@ -94,5 +94,43 @@ document.getElementById("displayOrganizationDescription").textContent = urlParam
 document.getElementById("displayTimestamp").textContent = urlParams.get("timestamp") || "N/A";
 
 
+// Sidebar Visit Message
+const visitMessageElement = document.getElementById('visit-message');
+
+// Helper function to calculate the number of days between two dates
+function calculateDaysBetweenDates(lastVisitDate, currentDate) {
+  const msPerDay = 24 * 60 * 60 * 1000; // Milliseconds in a day
+  const timeDifference = currentDate - lastVisitDate;
+  return Math.floor(timeDifference / msPerDay);
+}
+
+// Check and Update Last Visit in localStorage
+function displayVisitMessage() {
+  const lastVisit = localStorage.getItem('lastVisitDate');
+  const currentDate = new Date();
+
+  if (!lastVisit) {
+    // First visit
+    visitMessageElement.textContent = "Welcome! Let us know if you have any questions.";
+  } else {
+    // Parse the last visit date from localStorage
+    const lastVisitDate = new Date(lastVisit);
+    const daysBetweenVisits = calculateDaysBetweenDates(lastVisitDate, currentDate);
+
+    if (daysBetweenVisits < 1) {
+      visitMessageElement.textContent = "Back so soon! Awesome!";
+    } else if (daysBetweenVisits === 1) {
+      visitMessageElement.textContent = "You last visited 1 day ago.";
+    } else {
+      visitMessageElement.textContent = `You last visited ${daysBetweenVisits} days ago.`;
+    }
+  }
+
+  // Update the last visit date in localStorage
+  localStorage.setItem('lastVisitDate', currentDate.toISOString());
+}
+
+// Initialize the Visit Message
+displayVisitMessage();
 
 

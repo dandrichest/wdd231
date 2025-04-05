@@ -638,6 +638,146 @@ dialog button {
 dialog button:hover {
   background-color: #0056b3;
 }
+/* stylng of discover */
+.discover {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Card Styles */
+.card {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "image"
+    "address"
+    "description"
+    "button";
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color:#fffafa;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card-title {
+  grid-area: title;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #000080;
+}
+
+.card-image {
+  grid-area: image;
+}
+
+.card-image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.card-address {
+  grid-area: address;
+  font-style: normal;
+  color: #000080;
+  text-align: center;
+}
+
+.card-description {
+  grid-area: description;
+  color: #000080;
+  font-size: 0.9rem;
+}
+
+p {
+  line-height: 1.5; /* Reduces spacing between lines to be minimal */
+  margin: 0;      /* Removes extra margin (if any) */
+}
+
+
+.learn-more {
+  grid-area: button;
+  background-color: #000080;
+  color: #fffafa;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
+.learn-more:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Layouts */
+
+/* Small Screens (320px–640px) */
+@media (max-width: 640px) {
+  .discover {
+    grid-template-columns: 1fr; /* Single column */
+  }
+
+  .card {
+    grid-template-areas:
+      "title"
+      "image"
+      "address"
+      "description"
+      "button"; /* All stacked vertically */
+  }
+}
+
+/* Medium Screens (641px–1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .discover {
+    grid-template-columns: 1fr; /* Single column */
+  }
+
+  .card {
+    grid-template-areas:
+      "image title"
+      "image address"
+      "image description"
+      "image button"; /* Image on the side, everything else next to it */
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .card-image img {
+    width: 300px; /* Fix image width */
+    height: auto;
+  }
+}
+
+/* Large Screens (1025px and above) */
+@media (min-width: 1025px) {
+  .discover {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  }
+
+  .card {
+    grid-template-areas:
+      "image title"
+      "image address"
+      "image description"
+      "image button"; /* Same as medium but organized into rows of two cards */
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .card-image img {
+    width: 200px; /* Slightly larger image for larger screens */
+    height: auto;
+  }
+}
 
 /* Footer Styles */
 footer {
