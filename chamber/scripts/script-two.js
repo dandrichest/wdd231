@@ -93,6 +93,73 @@ document.getElementById("displayMembershipLevel").textContent = urlParams.get("m
 document.getElementById("displayOrganizationDescription").textContent = urlParams.get("orgDescription") || "N/A";
 document.getElementById("displayTimestamp").textContent = urlParams.get("timestamp") || "N/A";
 
+const abujafun = [
+  {
+    "name": "Central Park Abuja",
+    "address": "Kur Mohammed Avenue, Plot 174, Abuja, Federal Capital Territory, 9001",
+    "description": "A vibrant theme park offering activities like go-karting, paintball, mini-golf, archery, and more. Perfect for families and friends looking for adventure and relaxation.",
+    "image": "images/centralparkabuja.webp"
+  },
+  {
+    "name": "Nike Art Gallery Abuja",
+    "address": "Kilometre 7.5 Abuja International Airport Road, Piwoyi Village, Abuja, Federal Capital Territory, 905102",
+    "description": "A cultural hub showcasing traditional and contemporary Nigerian art, including paintings, sculptures, and crafts. Visitors can also participate in workshops and art tours.",
+    "image": "images/nikert-gallery.webp"
+  },
+  {
+    "name": "Millennium Park",
+    "address": "Maitama District, Abuja",
+    "description": "A serene green space ideal for picnics, leisurely walks, and sightseeing. The park features sculptures, art installations, and beautiful landscapes.",
+    "image": "images/millennium-park.webp"
+  },
+  {
+    "name": "Jabi Lake",
+    "address": "Jabi District, Abuja",
+    "description": "A picturesque lake offering activities like boat rides, fishing, and picnics. Surrounded by restaurants and cafes, making it a great spot for relaxation.",
+    "image": "images/jabi-lake.webp"
+  },
+  {
+    "name": "Magicland Amusement Park",
+    "address": "Constitution Avenue, Abuja",
+    "description": "A family-friendly amusement park with rides, games, and activities for all ages. A great spot for kids and adults alike.",
+    "image": "images/magicland-amusement.webp"
+  },
+  {
+    "name": "Aso Rock",
+    "address": "Near the Presidential Villa, Abuja",
+    "description": "A massive rock formation symbolizing Nigeria’s political power. Visitors can take guided tours to learn about its history and significance.",
+    "image": "images/aso-rock.webp"
+  },
+  {
+    "name": "Abuja Arts and Crafts Village",
+    "address": "Central Business District, Abuja",
+    "description": "A vibrant market showcasing Nigerian crafts, textiles, and souvenirs. A great place to shop for unique items and experience local culture.",
+    "image": "images/abujaartsandcrafts.webp"
+  },
+
+  {
+    "name": "Thought Pyramid Art Centre",
+    "address": "18 Libreville Crescent, Wuse II, Abuja",
+    "description": "A contemporary art gallery showcasing a wide range of Nigerian and African art. A must-visit for art enthusiasts.",
+    "image": "images/thought_pyramid.webp"
+  }
+]
+
+// Dynamically Render Cards
+const container = document.querySelector('.card-container');
+
+abujafun.forEach((card) => {
+  const cardElement = document.createElement('div');
+  cardElement.classList.add('card');
+  cardElement.innerHTML = `
+    <h2 class="card-title">${card.name}</h2>
+    <img src="${card.image}" alt="${card.name}" class="card-image">
+    <address class="card-address"><strong>Address:</strong> ${card.address}</address>
+    <p class="card-description"><strong>Description:</strong> ${card.description}</p>
+  
+  `;
+  container.appendChild(cardElement);
+});
 
 // Sidebar Visit Message
 const visitMessageElement = document.getElementById('visit-message');
@@ -132,5 +199,4 @@ function displayVisitMessage() {
 
 // Initialize the Visit Message
 displayVisitMessage();
-
 
